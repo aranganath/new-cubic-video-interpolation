@@ -1,0 +1,6 @@
+1. Install sublime-text: https://linuxhint.com/install-sublime-text3-ubuntu-22-04/ (terminal/remote)
+2. Install rsub: https://gist.github.com/zubaer-ahammed/c281e52fcc43c123f2e90af0597cd199 (terminal/remote)
+3. command: rsub <name_filename>
+
+
+Note: Make sure you have sublime installed in your local comp.
