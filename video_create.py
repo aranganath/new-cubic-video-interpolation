@@ -7,13 +7,14 @@ out_video_path = "car-turn_vid.mp4"
 output_full_vid_path = out_path+out_video_path
 
 images = os.listdir(path)
+images.sort()
 # print(images)
 
 img = []
 
 for i in images:
 	i = path+i
-	img.append(i) 
+	img.append(i)
 
 cv2_fourcc = cv2.VideoWriter_fourcc(*'mp4v')
 
