@@ -62,7 +62,7 @@ revNormalize = TF.Compose([revnormalize1, revnormalize2])
 revtrans = TF.Compose([revnormalize1, revnormalize2, TF.ToPILImage()])
 
 trainset = getattr(datas, config.trainset)(config.trainset_root, trans, config.train_size, config.train_crop_size, train=True)
-trainloader = torch.utils.data.DataLoader(trainset, batch_size=config.train_batch_size, shuffle=True, num_workers=2)
+trainloader = torch.utils.data.DataLoader(trainset, batch_size=config.train_batch_size, shuffle=True, num_workers=1)
 
 validationset = getattr(datas, config.validationset)(config.validationset_root, trans, config.validation_size, config.validation_crop_size, train=False)
 validationloader = torch.utils.data.DataLoader(validationset, batch_size=1, shuffle=False, num_workers=2)
