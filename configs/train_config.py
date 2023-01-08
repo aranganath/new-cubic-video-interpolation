@@ -11,7 +11,7 @@ validationset_root = './datasets/Adobe240_validation'
 validation_size = (640, 360)
 validation_crop_size = (640, 360)
 
-train_batch_size = 25
+train_batch_size = 4
 
 train_continue = False
 epochs = 250

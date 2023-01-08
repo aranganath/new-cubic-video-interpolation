@@ -67,19 +67,23 @@ class QVI(nn.Module):
         #          t: inter-time (N, 1, 1, 1) or constant*
         if I0 is not None:
             F10 = self.flownet(I1, I0).float()
+            F01 = self.flownet(I0, I1).float()
         else:
             F10 = None
+            F01 = None
 
         F12 = self.flownet(I1, I2).float()
         F21 = self.flownet(I2, I1).float()
 
         if I3 is not None:
             F23 = self.flownet(I2, I3).float()
+            F32 = self.flownet(I3, I2).float()
         else:
             F23 = None
+            F32 = None
 
         if F10 is not None and F23 is not None:
-            F1ta, F2ta = self.acc(F10, F12, F21, F23, t)
+            F1ta, F2ta = self.acc(F10, F01, F12, F21, F32, F23, t)
             
             F1t = F1ta
             F2t = F2ta
